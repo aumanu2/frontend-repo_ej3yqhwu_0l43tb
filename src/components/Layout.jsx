@@ -1,11 +1,15 @@
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { ShoppingBag, Menu, X, Instagram, Twitter, Facebook } from 'lucide-react'
 import { useState } from 'react'
+import BackgroundOrbs from './BackgroundOrbs'
 
 export default function Layout() {
   const [open, setOpen] = useState(false)
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="relative min-h-screen bg-black text-white">
+      {/* Ambient 3D background accents */}
+      <BackgroundOrbs />
+
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 bg-black/60 border-b border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link to="/" className="text-xl tracking-widest font-semibold">
@@ -27,11 +31,11 @@ export default function Layout() {
         </div>
       </header>
 
-      <main className="pt-16">
+      <main className="pt-16 relative z-10">
         <Outlet />
       </main>
 
-      <footer className="border-t border-white/10 mt-24">
+      <footer className="border-t border-white/10 mt-24 relative z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-3 gap-8">
           <div>
             <div className="text-xl tracking-widest font-semibold mb-4">LUXE<span className="text-yellow-400">.</span></div>

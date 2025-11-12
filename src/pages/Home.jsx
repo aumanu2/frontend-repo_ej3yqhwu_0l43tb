@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Hero from '../components/Hero'
 import ProductCard from '../components/ProductCard'
+import ParallaxShowcase from '../components/ParallaxShowcase'
 import api from '../lib/api'
 import { motion } from 'framer-motion'
 
@@ -23,6 +24,8 @@ export default function Home() {
           {featured.map(p => <ProductCard key={p.id} product={p} />)}
         </div>
       </section>
+
+      <ParallaxShowcase />
 
       <section className="relative py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(234,179,8,0.08),transparent_60%)]" />
